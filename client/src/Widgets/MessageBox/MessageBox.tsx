@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './MessageBox.module.scss'
 import FormSmile from '../../Shared/FormSmiles/FormSmile'
-import { useAppSelector } from '../../App/Redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../App/Redux/hooks'
+import { setMessages } from '../../App/Redux/Reducers/contentReducer'
 
-export default function MessageBox() {
+export default function MessageBox({ socket }) {
+  const [arrivalMessage, setArrivalMessage] = useState(null)
   const messages = useAppSelector(
     (state) => state.contentReduser.messager.messages
   )
@@ -11,6 +13,7 @@ export default function MessageBox() {
   const friendname = useAppSelector(
     (state) => state.contentReduser.messager.friendname
   )
+  const dispatch = useAppDispatch()
 
   const messagesEndRef = useRef(null)
 
@@ -21,6 +24,28 @@ export default function MessageBox() {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  useEffect(() => {
+    socket.current.on('getMessage', (data) => {
+      setArrivalMessage({
+        sender: data.senderId,
+        text: data.text,
+      })
+    })
+  }, [])
+
+  useEffect(() => {
+    arrivalMessage &&
+      friendname === arrivalMessage.sender &&
+      console.log(arrivalMessage)
+    dispatch(
+      setMessages({
+        date: new Date().toUTCString(),
+        key: arrivalMessage?.sender,
+        message: arrivalMessage?.text,
+      })
+    )
+  }, [arrivalMessage])
 
   return (
     <div className={styles.MessageBox}>

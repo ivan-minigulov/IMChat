@@ -71,6 +71,13 @@ export const ContentSlice = createSlice({
     addInputMessage: (state, action: PayloadAction<string>) => {
       state.valueInputMessage += action.payload
     },
+    setMessages: (state, action: PayloadAction<IMessages>) => {
+      state.messager.messages.push({
+        date: action.payload.date,
+        message: action.payload.message,
+        key: action.payload.key,
+      })
+    },
   },
 
   extraReducers: (builder) => {
@@ -79,7 +86,6 @@ export const ContentSlice = createSlice({
     })
     builder.addCase(fetchGetAllMessage.fulfilled, (state, action) => {
       state.isLoading = false
-      console.log(action.payload)
       state.messager.friendname = action.payload.friendname
       state.messager.messages = action.payload.messages
       state.error = ''
@@ -94,7 +100,6 @@ export const ContentSlice = createSlice({
     })
     builder.addCase(fetchAddMessage.fulfilled, (state, action) => {
       state.isLoading = false
-      console.log(action.payload)
       state.messager.friendname = action.payload.friendname
       state.messager.messages = action.payload.messages
       state.error = ''
@@ -106,7 +111,7 @@ export const ContentSlice = createSlice({
   },
 })
 
-export const { hoverSmile, valueInputMessage, addInputMessage } =
+export const { hoverSmile, valueInputMessage, addInputMessage, setMessages } =
   ContentSlice.actions
 
 export default ContentSlice.reducer

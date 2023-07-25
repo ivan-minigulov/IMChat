@@ -6,7 +6,7 @@ import {
   valueInputMessage,
 } from '../../App/Redux/Reducers/contentReducer'
 
-export default function InputMessage() {
+export default function InputMessage({ socket }) {
   const valueInput = useAppSelector(
     (state) => state.contentReduser.valueInputMessage
   )
@@ -24,6 +24,11 @@ export default function InputMessage() {
       onChange={(e) => dispatch(valueInputMessage(e.target.value))}
       onKeyDown={(event) => {
         if (event.key === 'Enter' && valueInput) {
+          socket.current.emit('sendMessage', {
+            senderId: username,
+            receiverId: friendname,
+            text: valueInput,
+          })
           dispatch(
             fetchAddMessage({ username, friendname, message: valueInput })
           )

@@ -8,7 +8,7 @@ import {
   valueInputMessage,
 } from '../../App/Redux/Reducers/contentReducer'
 
-export default function ButtonSendMessage() {
+export default function ButtonSendMessage({ socket }) {
   const username = useAppSelector((state) => state.userReduser.user.username)
   const friendname = useAppSelector(
     (state) => state.contentReduser.messager.friendname
@@ -23,6 +23,11 @@ export default function ButtonSendMessage() {
         color="inherit"
         onClick={() => {
           if (message) {
+            socket.current.emit('sendMessage', {
+              senderId: username,
+              receiverId: friendname,
+              text: message,
+            })
             dispatch(fetchAddMessage({ username, friendname, message }))
             dispatch(valueInputMessage(''))
           }

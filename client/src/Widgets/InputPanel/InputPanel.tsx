@@ -8,7 +8,7 @@ import FormSmile from '../../Shared/FormSmiles/FormSmile'
 import { useAppDispatch, useAppSelector } from '../../App/Redux/hooks'
 import { hoverSmile } from '../../App/Redux/Reducers/contentReducer'
 
-export default function InputPanel() {
+export default function InputPanel({ socket }) {
   const dispatch = useAppDispatch()
   const hoverSmileState = useAppSelector(
     (state) => state.contentReduser.hoverSmile
@@ -23,11 +23,11 @@ export default function InputPanel() {
           if (hoverSmileState) dispatch(hoverSmile(false))
         }}
       >
-        <InputMessage />
+        <InputMessage socket={socket} />
       </div>
 
       <div className={styles.RigthPanel}>
-        <ButtonSendMessage />
+        <ButtonSendMessage socket={socket} />
         <ButtonSmile />
       </div>
       <div>{hoverSmileState && <FormSmile />}</div>
