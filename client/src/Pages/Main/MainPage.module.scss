@@ -1,0 +1,5 @@
+.mainPage {
+  grid-row-start: 2;
+  display: grid;
+  grid-template-columns: minmax(300px, 30%) 1fr;
+}

@@ -1,0 +1,28 @@
+.navbar {
+  background-color: rgb(42, 40, 56);
+  color: white;
+  height: var(--navbar-height);
+}
+.Toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.divAvatarAndLogout {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin: 0 1rem 0 0.5rem;
+}
+
+.LogoutButton {
+  color: darkgray !important;
+  &:hover {
+    color: azure !important;
+  }
+}

@@ -1,0 +1,18 @@
+.inputMessage {
+  margin: 1rem 0.6rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--input-panel-bgcolor-lighten);
+  color: azure;
+  font-size: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  &:focus {
+    border: none;
+    outline: none;
+    // outline: solid 0.01rem var(--input-panel-bgcolor-lighten40);
+  }
+  &::placeholder {
+    color: var(--input-panel-bgcolor-lighten40);
+  }
+}

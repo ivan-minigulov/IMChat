@@ -1,0 +1,24 @@
+.divMessageBar {
+  display: grid;
+}
+.messageBar {
+  background-color: white;
+  display: grid;
+  grid-template-rows: 3rem calc(100vh - 3rem - 5rem - 64px) 5rem;
+}
+
+.emptyMessageBar {
+  display: flex;
+  background-color: var(--message-box-bgcolor);
+  color: azure;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.textEmptyMessageBar {
+  display: flex;
+  background-color: var(--message-box-bgcolor-lighten10);
+  padding: 0.2rem 1rem 0.4rem 1rem;
+  border-radius: 1rem;
+}

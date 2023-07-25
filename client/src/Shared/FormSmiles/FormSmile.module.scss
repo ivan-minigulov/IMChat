@@ -1,0 +1,71 @@
+.FormSmile {
+  position: absolute;
+  z-index: 30;
+  width: 400px;
+  height: 400px;
+  top: -410px;
+  right: 10px;
+
+  border-radius: 10px;
+  background-color: var(--input-panel-bgcolor);
+  color: aliceblue;
+
+  display: grid;
+  grid-template-rows: 1.1fr 5fr 0.5fr;
+  align-items: center;
+}
+
+.Content {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 95%;
+  height: 100%;
+  justify-content: space-around;
+  margin-left: 10px;
+  align-self: flex-start;
+
+  &::-webkit-scrollbar {
+    width: 0.8em;
+  }
+  &::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.175);
+    // outline: 0.5px solid slategrey;
+    border-radius: 0.3em;
+  }
+}
+.smile {
+  cursor: pointer;
+  margin: 0.2em;
+  line-height: 1.5;
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 0.1em;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.175);
+  }
+}
+
+.input {
+  width: 70%;
+  height: 24px;
+  font-size: 14px;
+  background-color: var(--input-panel-bgcolor-lighten);
+  color: azure;
+  border-radius: 10px;
+  border: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  &:focus {
+    border: none;
+    outline: none;
+    // outline: solid 0.01rem var(--input-panel-bgcolor-lighten40);
+  }
+  &::placeholder {
+    color: var(--input-panel-bgcolor-lighten40);
+  }
+}

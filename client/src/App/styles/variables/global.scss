@@ -1,0 +1,11 @@
+:root {
+  --navbar-height: 64px;
+  --leftbar-bgcolor: rgb(58, 54, 79);
+  --leftbar-bgcolor-lighten10: #{lighten(rgb(58, 54, 79), 10%)};
+  --input-panel-bgcolor: rgb(40, 36, 58);
+  --input-panel-bgcolor-lighten: #{lighten(rgb(32, 29, 46), 15%)};
+  --input-panel-bgcolor-lighten40: #{lighten(rgb(32, 29, 46), 40%)};
+  --message-box-bgcolor: rgb(25, 19, 50);
+  --message-box-bgcolor-lighten10: #{lighten(rgb(25, 19, 50), 10%)};
+  --title-messagebox-bgcolor: rgba(33, 30, 50, 0.9);
+}

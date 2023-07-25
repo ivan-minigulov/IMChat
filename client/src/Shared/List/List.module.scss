@@ -1,0 +1,15 @@
+.list {
+  width: 100%;
+  background-color: rgb(64, 64, 114);
+  margin-top: 0.1rem;
+  z-index: 100;
+  position: absolute !important;
+  overflow: auto;
+  max-height: calc(100vh * 0.6);
+}
+.iconPlus {
+  cursor: pointer;
+}
+.item:hover {
+  background-color: rgb(85, 85, 112);
+}

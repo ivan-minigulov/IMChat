@@ -1,0 +1,65 @@
+.MessageBox {
+  background-color: var(--message-box-bgcolor);
+  color: aliceblue;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  display: grid;
+  align-items: end;
+  grid-template-rows: 1fr 0;
+
+  &::-webkit-scrollbar {
+    width: 0.8em;
+  }
+  &::-webkit-scrollbar-track {
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.175);
+    border-radius: 0.3em;
+  }
+}
+
+.divMessageUser {
+  margin: 0.5rem 1.5rem;
+  display: grid;
+  max-width: 60%;
+  justify-self: end;
+}
+.divMessageFriend {
+  margin: 0.5rem 5rem 0.5rem 1.5rem;
+  display: grid;
+}
+
+.messageUser {
+  text-align: start;
+  justify-self: end;
+  word-wrap: break-word;
+  padding: 7px 10px;
+  background-color: rebeccapurple;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+}
+.dateUser {
+  justify-self: end;
+  width: fit-content;
+  height: fit-content;
+  font-size: 10px;
+  color: darkgrey;
+}
+
+.messageFriend {
+  padding: 7px 10px;
+  background-color: darkslategray;
+  width: fit-content;
+  height: fit-content;
+  justify-self: start;
+  border-radius: 5px;
+}
+.dateFriend {
+  width: fit-content;
+  height: fit-content;
+  justify-self: start;
+  font-size: 10px;
+  color: cadetblue;
+}

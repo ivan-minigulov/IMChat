@@ -1,0 +1,16 @@
+.inputPanel {
+  background-color: var(--input-panel-bgcolor);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 10fr) 1.5fr 0fr;
+  position: relative;
+}
+
+.InputMessage {
+  display: grid;
+}
+
+.RigthPanel {
+  display: grid;
+  grid-template-columns: auto 2fr;
+}

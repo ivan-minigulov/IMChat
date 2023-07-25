@@ -1,0 +1,21 @@
+.divSearch {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  position: relative;
+}
+.search {
+  position: relative;
+}
+.ClearIcon {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  right: 0.7rem;
+  top: 0.5rem;
+  color: darkgray !important;
+  cursor: pointer;
+  &:hover {
+    color: azure !important;
+  }
+}
